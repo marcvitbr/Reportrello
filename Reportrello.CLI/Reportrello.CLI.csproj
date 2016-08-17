@@ -18,7 +18,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ExternalConsole>false</ExternalConsole>
-    <Commandlineparameters>57290a616bfb5dd74e3e08ed</Commandlineparameters>
+    <Commandlineparameters></Commandlineparameters>
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -40,6 +40,10 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ArgumentsParsing\ApplicationArguments.cs" />
+    <Compile Include="ArgumentsParsing\DefaultArgumentsParser.cs" />
+    <Compile Include="ArgumentsParsing\IParsingEngine.cs" />
+    <Compile Include="ArgumentsParsing\ParsingEngineFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Reportrello\Reportrello.csproj">
@@ -49,6 +53,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ArgumentsParsing\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
