@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reportrello", "Reportrello\Reportrello.csproj", "{754CBE04-523A-4CD4-8503-31144EB8C228}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reportrello.CLI", "Reportrello.CLI\Reportrello.CLI.csproj", "{FD57FD8F-61AA-4688-A7F8-936256220677}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{754CBE04-523A-4CD4-8503-31144EB8C228}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{754CBE04-523A-4CD4-8503-31144EB8C228}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{754CBE04-523A-4CD4-8503-31144EB8C228}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{754CBE04-523A-4CD4-8503-31144EB8C228}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD57FD8F-61AA-4688-A7F8-936256220677}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD57FD8F-61AA-4688-A7F8-936256220677}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD57FD8F-61AA-4688-A7F8-936256220677}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD57FD8F-61AA-4688-A7F8-936256220677}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
