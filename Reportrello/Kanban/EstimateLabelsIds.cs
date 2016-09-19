@@ -3,13 +3,13 @@
     using System;
     using System.Collections.Generic;
 
-    public class EstimateIds : IEstimateIds
+    public class EstimateLabelsIds : IEstimateIds
     {
         private readonly IEnumerable<string> oneDayIds;
         private readonly IEnumerable<string> threeDaysIds;
         private readonly IEnumerable<string> fiveOrMoreDaysIds;
 
-        public EstimateIds(IEnumerable<string> oneDayIds,
+        public EstimateLabelsIds(IEnumerable<string> oneDayIds,
                            IEnumerable<string> threeDaysIds,
                            IEnumerable<string> fiveOrMoreDaysIds)
         {
