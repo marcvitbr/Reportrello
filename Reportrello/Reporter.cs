@@ -12,6 +12,7 @@
     {
         private const string TrelloBaseUrl = "https://api.trello.com/1/";
         private const string ResourceForCardsInList = "lists/{listId}/cards?key={key}&token={token}";
+        private const string ResourceForListsInBoard = "boards/{boardId}/lists?key={key}&token={token}";
 
         private readonly ITrelloAccount trelloAcount;
         private readonly IEstimateIds estimateIds;
@@ -49,10 +50,37 @@
             {
                 card.Estimate = this.estimates
                                     .Where(e => e.Key.Any(card.IdLabels.Contains))
-                                    .Select(e => e.Value).First();
+                                    .Select(e => e.Value).FirstOrDefault();
             }
 
             return cards;
+        }
+
+        public async Task<IEnumerable<ListSummary>> CardsCountInBoardAsync(string boardId)
+        {
+            var segments = new[]
+            {
+                new KeyValuePair<string, string>("boardId", boardId),
+                new KeyValuePair<string, string>("key", this.trelloAcount.Key),
+                new KeyValuePair<string, string>("token", this.trelloAcount.Token)
+            };
+
+            var lists = await this.httpClient.GetAsync<IEnumerable<List>>(ResourceForListsInBoard, segments);
+
+            var listsSummaries = new System.Collections.Generic.List<ListSummary>();
+
+            foreach(var list in lists)
+            {
+                var cards = await this.AllCardsInListAsync(list.Id);
+
+                listsSummaries.Add(
+                    new ListSummary(
+                            list.Id,
+                            list.Name,
+                            cards.Count()));
+            }
+
+            return listsSummaries;
         }
     }
 }
