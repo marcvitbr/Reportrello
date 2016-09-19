@@ -11,5 +11,6 @@
         public List<string> ThreeDaysEstimateIds { get; set; }
         public List<string> FiveOrMoreDaysEstimateIds { get; set; }
         public string ListId { get; set; }
+        public string BoardId { get; set; }
     }
 }
