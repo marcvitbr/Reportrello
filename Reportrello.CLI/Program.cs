@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Reportrello.CLI.ArgumentsParsing;
-using Reportrello.Kanban;
-using Reportrello.Report;
-using Reportrello.Trello;
 
 namespace Reportrello.CLI
 {
@@ -13,23 +10,9 @@ namespace Reportrello.CLI
         {
             var parser = ParsingEngineFactory.CreateDefaultArgumentsParser();
 
-            var arguments = parser.Parse(args);
+            var reportProgram = new ReportConsoleProgram(args, parser);
 
-            var account = new TrelloAccount(arguments.Key, arguments.Token);
-
-            var estimateIds = new EstimateIds(
-                arguments.OneDayEstimateIds,
-                arguments.ThreeDaysEstimateIds,
-                arguments.FiveOrMoreDaysEstimateIds);
-
-            var reporter = new Reporter(account, estimateIds);
-
-            var cards = reporter.AllCardsInListAsync(arguments.ListId).Result;
-
-            foreach (var card in cards)
-            {
-                Console.WriteLine($"{card.Estimate}\n{card.Name}\n{card.ShortUrl}\n\n");
-            }
+            reportProgram.ExecuteAsync().Wait();
         }
     }
 }

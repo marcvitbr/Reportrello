@@ -44,6 +44,8 @@
     <Compile Include="ArgumentsParsing\DefaultArgumentsParser.cs" />
     <Compile Include="ArgumentsParsing\IParsingEngine.cs" />
     <Compile Include="ArgumentsParsing\ParsingEngineFactory.cs" />
+    <Compile Include="ReportConsoleProgram.cs" />
+    <Compile Include="Reports\IReport.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Reportrello\Reportrello.csproj">
@@ -56,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ArgumentsParsing\" />
+    <Folder Include="Reports\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
