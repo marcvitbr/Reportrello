@@ -31,8 +31,10 @@
                         .Required();
 
             fluentParser.Setup(arg => arg.ListId)
-                        .As('l', "list")
-                        .Required();
+                        .As('l', "list");
+
+            fluentParser.Setup(arg => arg.BoardId)
+                        .As('b', "board");
 
             var defaultParser = new DefaultArgumentsParser(fluentParser);
 
