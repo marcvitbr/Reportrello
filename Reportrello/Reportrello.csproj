@@ -39,7 +39,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reporter.cs" />
     <Compile Include="Trello\Card.cs" />
-    <Compile Include="Kanban\EstimateIds.cs" />
+    <Compile Include="Kanban\EstimateLabelsIds.cs" />
     <Compile Include="Kanban\IEstimateIds.cs" />
     <Compile Include="Infrastructure\Http\IHttpClient.cs" />
     <Compile Include="Infrastructure\Http\RestSharpHttpClient.cs" />
@@ -47,6 +47,8 @@
     <Compile Include="Trello\ITrelloAccount.cs" />
     <Compile Include="Kanban\ListTypesIds.cs" />
     <Compile Include="Trello\TrelloAccount.cs" />
+    <Compile Include="Trello\List.cs" />
+    <Compile Include="Trello\ListSummary.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
